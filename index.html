@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berqurban Bersama UNP Peduli</title>
+    <style>
+        :root {
+            --primary-color: #006633;
+            --secondary-color: #FFCC00;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --danger-color: #dc3545;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://1.bp.blogspot.com/-e-gIX-S-CoU/XtSHxNC8E6I/AAAAAAAAF8s/IuviMsl49PUcWpiLcnlWRhquvsdA9EzEwCLcBGAsYHQ/s1920/sapi%2Bdan%2Bkambing%2Bkurban-01.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--secondary-color);
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 70px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: white;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+            margin-bottom: 40px;
+        }
+        
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e6b800;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background-color: rgba(0, 102, 51, 0.8);
+            border-radius: 10px;
+            padding: 25px;
+            width: 30%;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .card p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        section {
+            background-color: rgba(0, 102, 51, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .form-row .form-group {
+            width: 48%;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--dark-color);
+        }
+        
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        table tr:hover {
+            background-color: #e6e6e6;
+        }
+        
+        .total-row {
+            font-weight: bold;
+            background-color: var(--secondary-color) !important;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--secondary-color);
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .modal-content {
+            background-color: rgba(0, 102, 51, 0.95);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            color: white;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #e6b800;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .action-buttons button {
+            padding: 8px 12px;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .status-pending {
+            background-color: #ffc107;
+            color: #000;
+        }
+        
+        .status-active {
+            background-color: #28a745;
+            color: #fff;
+        }
+        
+        .status-completed {
+            background-color: #17a2b8;
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+            
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .form-row .form-group {
+                width: 100%;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_w8_pE2CWGbfzWhrSkAkGBjcyK8SoaA6E_-zIMDYHB1EwgJVFtYYnW5jeYvSsLdkS7s8uMN5GvJ49ndSlFQPRdQmcVE0eZE9m3XXhZFq5A-hEZCFo1jbSUI1EsJ2Eg7myqJJRtTVlY-g8B1h1ZBJpn7Z-UuOmPKXOUfFSP9rrpUs-0PPY05Tuz654wg/s1600/logo-unp-png.png" alt="Logo UNP">
+                <div class="logo-text">
+                    <h1>UNP Peduli</h1>
+                    <p>Berqurban Bersama UNP</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" id="nav-home">Beranda</a></li>
+                    <li><a href="#" id="nav-register">Pendaftaran</a></li>
+                    <li><a href="#" id="nav-payroll">Penggajian</a></li>
+                    <li><a href="#" id="nav-report">Laporan</a></li>
+                    <li><a href="#" id="nav-management">Kelola Data</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="home" class="content-section">
+            <div class="hero">
+                <h2>Selamat Datang di Program Berqurban Bersama UNP Peduli</h2>
+                <p>Program qurban untuk dosen dan karyawan Universitas Negeri Padang. Mari bersama-sama berqurban untuk berbagi kebahagiaan di hari raya Idul Adha 1447 H.</p>
+                <a href="#" class="btn" id="btn-register">Daftar Sekarang</a>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3>Tentang Program</h3>
+                    <p>Program qurban kolektif untuk dosen dan karyawan UNP dengan pembiayaan melalui pemotongan gaji bulanan selama 12 bulan.</p>
+                    <a href="#" class="btn btn-detail" data-modal="modal-about">Selengkapnya</a>
+                </div>
+                <div class="card">
+                    <h3>Jenis Hewan Qurban</h3>
+                    <p>Pilihan hewan qurban antara lain sapi (1/7), kambing (1/1), atau domba (1/1) dengan perkiraan harga yang telah ditentukan.</p>
+                    <a href="#" class="btn btn-detail" data-modal="modal-animals">Selengkapnya</a>
+                </div>
+                <div class="card">
+                    <h3>Timeline</h3>
+                    <p>Pendaftaran dibuka hingga 1 bulan sebelum Idul Adha. Pemotongan gaji dimulai bulan berikutnya setelah pendaftaran.</p>
+                    <a href="#" class="btn btn-detail" data-modal="modal-timeline">Selengkapnya</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="register" class="content-section hidden">
+            <h2>Formulir Pendaftaran Qurban</h2>
+            <form id="registration-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nip">NIP</label>
+                        <input type="text" id="nip" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="unit-kerja">Unit Kerja</label>
+                        <select id="unit-kerja" required>
+                            <option value="">Pilih Unit Kerja</option>
+                            <option value="Fakultas Teknik">Fakultas Teknik</option>
+                            <option value="Fakultas Ilmu Pendidikan">Fakultas Ilmu Pendidikan</option>
+                            <option value="Fakultas Ekonomi">Fakultas Ekonomi</option>
+                            <option value="Fakultas Bahasa dan Seni">Fakultas Bahasa dan Seni</option>
+                            <option value="Fakultas Ilmu Sosial">Fakultas Ilmu Sosial</option>
+                            <option value="Administrasi">Administrasi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jabatan">Jabatan</label>
+                        <input type="text" id="jabatan" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon</label>
+                        <input type="tel" id="telepon" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="jenis-hewan">Jenis Hewan Qurban</label>
+                    <select id="jenis-hewan" required>
+                        <option value="">Pilih Jenis Hewan</option>
+                        <option value="sapi">Sapi (1/7) - Rp. 3.500.000</option>
+                        <option value="kambing">Kambing (1/1) - Rp. 2.500.000</option>
+                        <option value="domba">Domba (1/1) - Rp. 2.800.000</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pernyataan">
+                        <input type="checkbox" id="pernyataan" required> Saya menyetujui pemotongan gaji bulanan selama 12 bulan untuk pembiayaan qurban
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn">Daftar Qurban</button>
+            </form>
+            
+            <div id="registration-success" class="hidden" style="margin-top: 20px; padding: 20px; background-color: rgba(0, 128, 0, 0.3); border-radius: 5px;">
+                <h3 style="color: var(--secondary-color); margin-bottom: 10px;">Pendaftaran Berhasil!</h3>
+                <p>Terima kasih telah mendaftar program qurban UNP Peduli. Data Anda telah tercatat dan akan diproses oleh bagian penggajian.</p>
+            </div>
+        </section>
+        
+        <section id="payroll" class="content-section hidden">
+            <h2>Input Potongan Gaji Qurban</h2>
+            <p style="margin-bottom: 20px;">Form ini untuk diisi oleh bagian penggajian untuk menginput data potongan gaji peserta qurban.</p>
+            
+            <form id="payroll-form">
+                <div class="form-group">
+                    <label for="search-nip">Cari Peserta berdasarkan NIP</label>
+                    <input type="text" id="search-nip" placeholder="Masukkan NIP">
+                    <button type="button" class="btn" id="btn-search" style="margin-top: 10px; padding: 8px 15px;">Cari</button>
+                </div>
+                
+                <div id="participant-info" class="hidden">
+                    <h3 style="color: var(--secondary-color); margin: 20px 0 10px;">Data Peserta</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="payroll-nama">Nama</label>
+                            <input type="text" id="payroll-nama" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="payroll-unit">Unit Kerja</label>
+                            <input type="text" id="payroll-unit" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="payroll-jenis">Jenis Qurban</label>
+                            <input type="text" id="payroll-jenis" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="payroll-total">Total Biaya</label>
+                            <input type="text" id="payroll-total" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="potongan-perbulan">Potongan per Bulan (12x)</label>
+                        <input type="text" id="potongan-perbulan" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bulan-mulai">Bulan Mulai Potongan</label>
+                        <select id="bulan-mulai" required>
+                            <option value="">Pilih Bulan</option>
+                            <option value="Januari">Januari</option>
+                            <option value="Februari">Februari</option>
+                            <option value="Maret">Maret</option>
+                            <option value="April">April</option>
+                            <option value="Mei">Mei</option>
+                            <option value="Juni">Juni</option>
+                            <option value="Juli">Juli</option>
+                            <option value="Agustus">Agustus</option>
+                            <option value="September">September</option>
+                            <option value="Oktober">Oktober</option>
+                            <option value="November">November</option>
+                            <option value="Desember">Desember</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn">Simpan Potongan Gaji</button>
+                </div>
+            </form>
+            
+            <div id="payroll-success" class="hidden" style="margin-top: 20px; padding: 20px; background-color: rgba(0, 128, 0, 0.3); border-radius: 5px;">
+                <h3 style="color: var(--secondary-color); margin-bottom: 10px;">Data Potongan Gaji Tersimpan!</h3>
+                <p>Data potongan gaji untuk peserta qurban telah berhasil disimpan.</p>
+            </div>
+        </section>
+        
+        <section id="report" class="content-section hidden">
+            <h2>Laporan Peserta Qurban 1447 H</h2>
+            <p style="margin-bottom: 20px;">Laporan ini menampilkan data peserta qurban dan total potongan gaji.</p>
+            
+            <div class="form-group">
+                <label for="filter-unit">Filter berdasarkan Unit Kerja</label>
+                <select id="filter-unit">
+                    <option value="all">Semua Unit</option>
+                    <option value="Fakultas Teknik">Fakultas Teknik</option>
+                    <option value="Fakultas Ilmu Pendidikan">Fakultas Ilmu Pendidikan</option>
+                    <option value="Fakultas Ekonomi">Fakultas Ekonomi</option>
+                    <option value="Fakultas Bahasa dan Seni">Fakultas Bahasa dan Seni</option>
+                    <option value="Fakultas Ilmu Sosial">Fakultas Ilmu Sosial</option>
+                    <option value="Administrasi">Administrasi</option>
+                </select>
+                <button type="button" class="btn" id="btn-filter" style="margin-top: 10px; padding: 8px 15px;">Filter</button>
+            </div>
+            
+            <table id="report-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>NIP</th>
+                        <th>Nama</th>
+                        <th>Unit Kerja</th>
+                        <th>Jenis Qurban</th>
+                        <th>Total Biaya</th>
+                        <th>Potongan/Bulan</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+                <tfoot>
+                    <tr class="total-row">
+                        <td colspan="5">Total</td>
+                        <td id="total-biaya">Rp. 0</td>
+                        <td id="total-potongan">Rp. 0</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <button id="btn-print" class="btn" style="margin-top: 20px;">Cetak Laporan</button>
+            <button id="btn-export" class="btn" style="margin-top: 20px; margin-left: 10px;">Export ke Excel</button>
+        </section>
+        
+        <section id="management" class="content-section hidden">
+            <h2>Kelola Data Peserta Qurban</h2>
+            <p style="margin-bottom: 20px;">Kelola data peserta qurban, termasuk edit dan hapus data.</p>
+            
+            <div class="form-group">
+                <label for="search-participant">Cari Peserta (Nama/NIP)</label>
+                <input type="text" id="search-participant" placeholder="Masukkan nama atau NIP">
+                <button type="button" class="btn" id="btn-search-participant" style="margin-top: 10px; padding: 8px 15px;">Cari</button>
+            </div>
+            
+            <table id="management-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>NIP</th>
+                        <th>Nama</th>
+                        <th>Unit Kerja</th>
+                        <th>Jenis Qurban</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        
+        <footer>
+            <p>Program Berqurban Bersama UNP Peduli - Idul Adha 1447 H</p>
+            <p>© 2025 Universitas Negeri Padang. Semua hak dilindungi.</p>
+        </footer>
+    </div>
+    
+    <!-- Modal About Program -->
+    <div id="modal-about" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tentang Program Qurban UNP Peduli</h2>
+            <div style="margin-top: 20px; line-height: 1.8;">
+                <p>Program Qurban UNP Peduli adalah inisiatif dari Universitas Negeri Padang untuk memfasilitasi dosen dan karyawan dalam melaksanakan ibadah qurban dengan sistem kolektif dan pembiayaan melalui pemotongan gaji bulanan.</p>
+                
+                <h3 style="color: var(--secondary-color); margin: 20px 0 10px;">Tujuan Program</h3>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Memudahkan sivitas akademika UNP dalam melaksanakan ibadah qurban</li>
+                    <li>Menyediakan hewan qurban dengan kualitas terjamin dan harga terjangkau</li>
+                    <li>Mendistribusikan daging qurban kepada yang berhak secara merata</li>
+                    <li>Mengoptimalkan pendistribusian hewan qurban</li>
+                </ul>
+                
+                <h3 style="color: var(--secondary-color); margin: 20px 0 10px;">Mekanisme Program</h3>
+                <p>Program ini menggunakan sistem pembiayaan melalui pemotongan gaji selama 12 bulan dengan ketentuan:</p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Peserta mendaftar melalui form pendaftaran online</li>
+                    <li>Pemotongan gaji dimulai bulan berikutnya setelah pendaftaran</li>
+                    <li>Besaran potongan dihitung berdasarkan harga hewan qurban dibagi 12 bulan</li>
+                    <li>Hewan qurban akan disembelih pada hari raya Idul Adha 1447 H</li>
+                </ul>
+                
+                <h3 style="color: var(--secondary-color); margin: 20px 0 10px;">Manfaat Program</h3>
+                <ul style="margin-left: 20px;">
+                    <li>Pembiayaan terjangkau dengan cicilan 12 bulan</li>
+                    <li>Hewan qurban terjamin kesehatannya</li>
+                    <li>Proses pendaftaran mudah dan transparan</li>
+                    <li>Distribusi daging qurban terorganisir dengan baik</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Animal Types -->
+    <div id="modal-animals" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Jenis Hewan Qurban</h2>
+            <div style="margin-top: 20px; line-height: 1.8;">
+                <p>Program Qurban UNP Peduli menyediakan beberapa pilihan hewan qurban dengan spesifikasi dan harga sebagai berikut:</p>
+                
+                <div style="background-color: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 10px;">Sapi (1/7)</h3>
+                    <p><strong>Harga:</strong> Rp. 3.500.000 per 1/7 bagian</p>
+                    <p><strong>Spesifikasi:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>Usia minimal 2 tahun</li>
+                        <li>Berat minimal 200 kg (hidup)</li>
+                        <li>Kondisi sehat dan memenuhi syarat qurban</li>
+                        <li>Satu sapi untuk 7 peserta</li>
+                    </ul>
+                    <p><strong>Keuntungan:</strong> Lebih ekonomis untuk peserta yang ingin berqurban dengan biaya lebih terjangkau</p>
+                </div>
+                
+                <div style="background-color: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 10px;">Kambing (1/1)</h3>
+                    <p><strong>Harga:</strong> Rp. 2.500.000 per ekor</p>
+                    <p><strong>Spesifikasi:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>Usia minimal 1 tahun</li>
+                        <li>Berat minimal 25 kg (hidup)</li>
+                        <li>Kondisi sehat dan memenuhi syarat qurban</li>
+                        <li>Satu kambing untuk 1 peserta</li>
+                    </ul>
+                    <p><strong>Keuntungan:</strong> Pilihan tepat untuk peserta yang ingin berqurban satu ekor penuh</p>
+                </div>
+                
+                <div style="background-color: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 10px;">Domba (1/1)</h3>
+                    <p><strong>Harga:</strong> Rp. 2.800.000 per ekor</p>
+                    <p><strong>Spesifikasi:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 10px;">
+                        <li>Usia minimal 6 bulan</li>
+                        <li>Berat minimal 20 kg (hidup)</li>
+                        <li>Kondisi sehat dan memenuhi syarat qurban</li>
+                        <li>Satu domba untuk 1 peserta</li>
+                    </ul>
+                    <p><strong>Keuntungan:</strong> Daging lebih lembut dan digemari banyak orang</p>
+                </div>
+                
+                <h3 style="color: var(--secondary-color); margin: 20px 0 10px;">Persyaratan Hewan Qurban</h3>
+                <p>Semua hewan qurban yang disediakan memenuhi persyaratan:</p>
+                <ul style="margin-left: 20px;">
+                    <li>Sehat dan tidak cacat</li>
+                    <li>Memiliki cukup daging</li>
+                    <li>Bebas dari penyakit menular</li>
+                    <li>Dipelihara dengan baik sebelum penyembelihan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Timeline -->
+    <div id="modal-timeline" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Timeline Program Qurban 1447 H</h2>
+            <div style="margin-top: 20px; line-height: 1.8;">
+                <p>Berikut adalah timeline pelaksanaan Program Qurban UNP Peduli 1447 H:</p>
+                
+                <div style="margin: 30px 0;">
+                    <div style="display: flex; margin-bottom: 15px; align-items: flex-start;">
+                        <div style="background-color: var(--secondary-color); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; min-width: 120px; text-align: center;">
+                            Mei 2025
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 5px;">Pembukaan Pendaftaran</h3>
+                            <p>Pendaftaran peserta qurban dibuka untuk seluruh dosen dan karyawan UNP</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; margin-bottom: 15px; align-items: flex-start;">
+                        <div style="background-color: var(--secondary-color); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; min-width: 120px; text-align: center;">
+                            Juni 2025
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 5px;">Penutupan Pendaftaran</h3>
+                            <p>Pendaftaran ditutup pada akhir Juni untuk persiapan pengadaan hewan</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; margin-bottom: 15px; align-items: flex-start;">
+                        <div style="background-color: var(--secondary-color); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; min-width: 120px; text-align: center;">
+                            Juli 2025
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 5px;">Mulai Potongan Gaji</h3>
+                            <p>Pemotongan gaji bulanan dimulai untuk peserta yang mendaftar sebelum Juni</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; margin-bottom: 15px; align-items: flex-start;">
+                        <div style="background-color: var(--secondary-color); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; min-width: 120px; text-align: center;">
+                            Mei 2026
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 5px;">Penyelesaian Pembayaran</h3>
+                            <p>Pemotongan gaji terakhir untuk peserta yang mendaftar pada bulan Juni</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; margin-bottom: 15px; align-items: flex-start;">
+                        <div style="background-color: var(--secondary-color); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; min-width: 120px; text-align: center;">
+                            Juni 2026
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 5px;">Pengadaan Hewan</h3>
+                            <p>Proses pengadaan dan pemeriksaan hewan qurban</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; margin-bottom: 15px; align-items: flex-start;">
+                        <div style="background-color: var(--secondary-color); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; min-width: 120px; text-align: center;">
+                            Idul Adha 1447 H
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 5px;">Penyembelihan</h3>
+                            <p>Penyembelihan hewan qurban pada hari raya Idul Adha</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; margin-bottom: 15px; align-items: flex-start;">
+                        <div style="background-color: var(--secondary-color); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; min-width: 120px; text-align: center;">
+                            T+2 Hari
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <h3 style="color: var(--secondary-color); margin-bottom: 5px;">Distribusi Daging</h3>
+                            <p>Pendistribusian daging qurban kepada penerima manfaat</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="color: var(--secondary-color); margin: 20px 0 10px;">Catatan Penting</h3>
+                <ul style="margin-left: 20px;">
+                    <li>Peserta yang mendaftar setelah Juni akan mulai dipotong gajinya bulan berikutnya</li>
+                    <li>Pemotongan gaji akan berlanjut hingga 12 kali meskipun sudah melewati Idul Adha</li>
+                    <li>Peserta akan mendapatkan sertifikat qurban setelah penyembelihan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Edit Participant -->
+    <div id="modal-edit" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Data Peserta Qurban</h2>
+            <form id="edit-form" style="margin-top: 20px;">
+                <input type="hidden" id="edit-id">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-nama">Nama Lengkap</label>
+                        <input type="text" id="edit-nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-nip">NIP</label>
+                        <input type="text" id="edit-nip" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-unit-kerja">Unit Kerja</label>
+                        <select id="edit-unit-kerja" required>
+                            <option value="">Pilih Unit Kerja</option>
+                            <option value="Fakultas Teknik">Fakultas Teknik</option>
+                            <option value="Fakultas Ilmu Pendidikan">Fakultas Ilmu Pendidikan</option>
+                            <option value="Fakultas Ekonomi">Fakultas Ekonomi</option>
+                            <option value="Fakultas Bahasa dan Seni">Fakultas Bahasa dan Seni</option>
+                            <option value="Fakultas Ilmu Sosial">Fakultas Ilmu Sosial</option>
+                            <option value="Administrasi">Administrasi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-jabatan">Jabatan</label>
+                        <input type="text" id="edit-jabatan" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-email">Email</label>
+                        <input type="email" id="edit-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-telepon">Nomor Telepon</label>
+                        <input type="tel" id="edit-telepon" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-jenis-hewan">Jenis Hewan Qurban</label>
+                    <select id="edit-jenis-hewan" required>
+                        <option value="">Pilih Jenis Hewan</option>
+                        <option value="sapi">Sapi (1/7) - Rp. 3.500.000</option>
+                        <option value="kambing">Kambing (1/1) - Rp. 2.500.000</option>
+                        <option value="domba">Domba (1/1) - Rp. 2.800.000</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-status">Status</label>
+                    <select id="edit-status" required>
+                        <option value="Menunggu Verifikasi">Menunggu Verifikasi</option>
+                        <option value="Aktif">Aktif</option>
+                        <option value="Selesai">Selesai</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-catatan">Catatan</label>
+                    <textarea id="edit-catatan" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                <button type="button" class="btn btn-danger" id="btn-delete" style="margin-left: 10px;">Hapus Data</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Data peserta qurban (simulasi database)
+        let participants = [];
+        
+        // Harga hewan qurban
+        const animalPrices = {
+            'sapi': 3500000,
+            'kambing': 2500000,
+            'domba': 2800000
+        };
+        
+        // Navigasi menu
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Hapus class active dari semua menu
+                document.querySelectorAll('nav a').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Tambah class active ke menu yang diklik
+                this.classList.add('active');
+                
+                // Sembunyikan semua section
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Tampilkan section yang sesuai
+                const target = this.id.replace('nav-', '');
+                document.getElementById(target).classList.remove('hidden');
+            });
+        });
+        
+        // Tombol daftar di beranda
+        document.getElementById('btn-register').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Sembunyikan semua section
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Tampilkan section pendaftaran
+            document.getElementById('register').classList.remove('hidden');
+            
+            // Update menu aktif
+            document.querySelectorAll('nav a').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.getElementById('nav-register').classList.add('active');
+        });
+        
+        // Form pendaftaran
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Ambil data dari form
+            const nama = document.getElementById('nama').value;
+            const nip = document.getElementById('nip').value;
+            const unitKerja = document.getElementById('unit-kerja').value;
+            const jabatan = document.getElementById('jabatan').value;
+            const email = document.getElementById('email').value;
+            const telepon = document.getElementById('telepon').value;
+            const jenisHewan = document.getElementById('jenis-hewan').value;
+            
+            // Hitung biaya
+            const totalBiaya = animalPrices[jenisHewan];
+            const potonganPerBulan = Math.ceil(totalBiaya / 12);
+            
+            // Tambahkan ke data peserta
+            participants.push({
+                id: Date.now().toString(),
+                nama,
+                nip,
+                unitKerja,
+                jabatan,
+                email,
+                telepon,
+                jenisHewan,
+                totalBiaya,
+                potonganPerBulan,
+                status: 'Menunggu Verifikasi',
+                catatan: '',
+                tanggalDaftar: new Date().toISOString()
+            });
+            
+            // Reset form
+            this.reset();
+            
+            // Tampilkan pesan sukses
+            document.getElementById('registration-success').classList.remove('hidden');
+            
+            // Scroll ke pesan sukses
+            document.getElementById('registration-success').scrollIntoView({ behavior: 'smooth' });
+            
+            // Simpan ke localStorage (simulasi database)
+            saveParticipants();
+            
+            // Update laporan
+            generateReport();
+            generateManagementTable();
+        });
+        
+        // Form pencarian peserta untuk penggajian
+        document.getElementById('btn-search').addEventListener('click', function() {
+            const searchNip = document.getElementById('search-nip').value;
+            const participant = participants.find(p => p.nip === searchNip);
+            
+            if (participant) {
+                // Isi data peserta
+                document.getElementById('payroll-nama').value = participant.nama;
+                document.getElementById('payroll-unit').value = participant.unitKerja;
+                document.getElementById('payroll-jenis').value = getAnimalName(participant.jenisHewan);
+                document.getElementById('payroll-total').value = formatRupiah(participant.totalBiaya);
+                document.getElementById('potongan-perbulan').value = formatRupiah(participant.potonganPerBulan);
+                
+                // Tampilkan form
+                document.getElementById('participant-info').classList.remove('hidden');
+                document.getElementById('payroll-success').classList.add('hidden');
+            } else {
+                alert('Peserta dengan NIP tersebut tidak ditemukan.');
+            }
+        });
+        
+        // Form simpan potongan gaji
+        document.getElementById('payroll-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const bulanMulai = document.getElementById('bulan-mulai').value;
+            const searchNip = document.getElementById('search-nip').value;
+            
+            // Update status peserta
+            const participantIndex = participants.findIndex(p => p.nip === searchNip);
+            if (participantIndex !== -1) {
+                participants[participantIndex].status = 'Aktif';
+                participants[participantIndex].bulanMulai = bulanMulai;
+                
+                // Simpan ke localStorage
+                saveParticipants();
+                
+                // Tampilkan pesan sukses
+                document.getElementById('payroll-success').classList.remove('hidden');
+                document.getElementById('participant-info').classList.add('hidden');
+                this.reset();
+                
+                // Scroll ke pesan sukses
+                document.getElementById('payroll-success').scrollIntoView({ behavior: 'smooth' });
+                
+                // Update laporan
+                generateReport();
+                generateManagementTable();
+            }
+        });
+        
+        // Filter laporan
+        document.getElementById('btn-filter').addEventListener('click', function() {
+            generateReport();
+        });
+        
+        // Cetak laporan
+        document.getElementById('btn-print').addEventListener('click', function() {
+            window.print();
+        });
+        
+        // Export ke Excel (simulasi)
+        document.getElementById('btn-export').addEventListener('click', function() {
+            alert('Fitur export ke Excel akan mengunduh file laporan.xlsx');
+        });
+        
+        // Cari peserta untuk manajemen data
+        document.getElementById('btn-search-participant').addEventListener('click', function() {
+            generateManagementTable();
+        });
+        
+        // Fungsi untuk generate laporan
+        function generateReport() {
+            const filterUnit = document.getElementById('filter-unit').value;
+            const filteredParticipants = filterUnit === 'all' 
+                ? participants 
+                : participants.filter(p => p.unitKerja === filterUnit);
+            
+            const tbody = document.querySelector('#report-table tbody');
+            tbody.innerHTML = '';
+            
+            let totalBiaya = 0;
+            let totalPotongan = 0;
+            
+            filteredParticipants.forEach((participant, index) => {
+                const row = document.createElement('tr');
+                
+                const statusBadge = getStatusBadge(participant.status);
+                
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${participant.nip}</td>
+                    <td>${participant.nama}</td>
+                    <td>${participant.unitKerja}</td>
+                    <td>${getAnimalName(participant.jenisHewan)}</td>
+                    <td>${formatRupiah(participant.totalBiaya)}</td>
+                    <td>${formatRupiah(participant.potonganPerBulan)}</td>
+                    <td>${statusBadge}</td>
+                `;
+                
+                tbody.appendChild(row);
+                
+                totalBiaya += participant.totalBiaya;
+                totalPotongan += participant.potonganPerBulan;
+            });
+            
+            document.getElementById('total-biaya').textContent = formatRupiah(totalBiaya);
+            document.getElementById('total-potongan').textContent = formatRupiah(totalPotongan);
+        }
+        
+        // Fungsi untuk generate tabel manajemen
+        function generateManagementTable() {
+            const searchTerm = document.getElementById('search-participant').value.toLowerCase();
+            const filteredParticipants = searchTerm 
+                ? participants.filter(p => 
+                    p.nama.toLowerCase().includes(searchTerm) || 
+                    p.nip.toLowerCase().includes(searchTerm))
+                : participants;
+            
+            const tbody = document.querySelector('#management-table tbody');
+            tbody.innerHTML = '';
+            
+            filteredParticipants.forEach((participant, index) => {
+                const row = document.createElement('tr');
+                
+                const statusBadge = getStatusBadge(participant.status);
+                
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${participant.nip}</td>
+                    <td>${participant.nama}</td>
+                    <td>${participant.unitKerja}</td>
+                    <td>${getAnimalName(participant.jenisHewan)}</td>
+                    <td>${statusBadge}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary btn-edit" data-id="${participant.id}">Edit</button>
+                            <button class="btn btn-danger btn-delete" data-id="${participant.id}">Hapus</button>
+                        </div>
+                    </td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+            
+            // Tambahkan event listener untuk tombol edit
+            document.querySelectorAll('.btn-edit').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const participantId = this.getAttribute('data-id');
+                    editParticipant(participantId);
+                });
+            });
+            
+            // Tambahkan event listener untuk tombol hapus
+            document.querySelectorAll('.btn-delete').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const participantId = this.getAttribute('data-id');
+                    if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                        deleteParticipant(participantId);
+                    }
+                });
+            });
+        }
+        
+        // Fungsi untuk edit peserta
+        function editParticipant(id) {
+            const participant = participants.find(p => p.id === id);
+            if (participant) {
+                // Isi form edit
+                document.getElementById('edit-id').value = participant.id;
+                document.getElementById('edit-nama').value = participant.nama;
+                document.getElementById('edit-nip').value = participant.nip;
+                document.getElementById('edit-unit-kerja').value = participant.unitKerja;
+                document.getElementById('edit-jabatan').value = participant.jabatan;
+                document.getElementById('edit-email').value = participant.email;
+                document.getElementById('edit-telepon').value = participant.telepon;
+                document.getElementById('edit-jenis-hewan').value = participant.jenisHewan;
+                document.getElementById('edit-status').value = participant.status;
+                document.getElementById('edit-catatan').value = participant.catatan || '';
+                
+                // Buka modal edit
+                openModal('modal-edit');
+            }
+        }
+        
+        // Form edit peserta
+        document.getElementById('edit-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const id = document.getElementById('edit-id').value;
+            const participantIndex = participants.findIndex(p => p.id === id);
+            
+            if (participantIndex !== -1) {
+                // Update data peserta
+                participants[participantIndex] = {
+                    ...participants[participantIndex],
+                    nama: document.getElementById('edit-nama').value,
+                    nip: document.getElementById('edit-nip').value,
+                    unitKerja: document.getElementById('edit-unit-kerja').value,
+                    jabatan: document.getElementById('edit-jabatan').value,
+                    email: document.getElementById('edit-email').value,
+                    telepon: document.getElementById('edit-telepon').value,
+                    jenisHewan: document.getElementById('edit-jenis-hewan').value,
+                    status: document.getElementById('edit-status').value,
+                    catatan: document.getElementById('edit-catatan').value,
+                    totalBiaya: animalPrices[document.getElementById('edit-jenis-hewan').value],
+                    potonganPerBulan: Math.ceil(animalPrices[document.getElementById('edit-jenis-hewan').value] / 12)
+                };
+                
+                // Simpan ke localStorage
+                saveParticipants();
+                
+                // Tutup modal
+                closeModal('modal-edit');
+                
+                // Update tabel
+                generateReport();
+                generateManagementTable();
+                
+                alert('Data peserta berhasil diperbarui!');
+            }
+        });
+        
+        // Tombol hapus di modal edit
+        document.getElementById('btn-delete').addEventListener('click', function() {
+            const id = document.getElementById('edit-id').value;
+            if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                deleteParticipant(id);
+                closeModal('modal-edit');
+            }
+        });
+        
+        // Fungsi untuk hapus peserta
+        function deleteParticipant(id) {
+            participants = participants.filter(p => p.id !== id);
+            saveParticipants();
+            generateReport();
+            generateManagementTable();
+            alert('Data peserta berhasil dihapus!');
+        }
+        
+        // Fungsi helper
+        function getAnimalName(code) {
+            const names = {
+                'sapi': 'Sapi (1/7)',
+                'kambing': 'Kambing (1/1)',
+                'domba': 'Domba (1/1)'
+            };
+            return names[code] || code;
+        }
+        
+        function formatRupiah(amount) {
+            return 'Rp. ' + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+        
+        function getStatusBadge(status) {
+            const statusClass = {
+                'Menunggu Verifikasi': 'status-pending',
+                'Aktif': 'status-active',
+                'Selesai': 'status-completed'
+            }[status] || '';
+            
+            return `<span class="status-badge ${statusClass}">${status}</span>`;
+        }
+        
+        function saveParticipants() {
+            localStorage.setItem('qurbanParticipants', JSON.stringify(participants));
+        }
+        
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Event listener untuk tombol detail (Selengkapnya)
+        document.querySelectorAll('.btn-detail').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalId = this.getAttribute('data-modal');
+                openModal(modalId);
+            });
+        });
+        
+        // Event listener untuk tombol close modal
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+        
+        // Tutup modal ketika klik di luar area konten modal
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+        
+        // Load data dari localStorage saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedData = localStorage.getItem('qurbanParticipants');
+            if (savedData) {
+                participants = JSON.parse(savedData);
+                
+                // Jika ada data, generate laporan dan tabel manajemen
+                if (participants.length > 0) {
+                    generateReport();
+                    generateManagementTable();
+                }
+            }
+            
+            // Contoh data awal jika tidak ada data
+            if (participants.length === 0) {
+                participants = [
+                    {
+                        id: '1',
+                        nama: 'Dr. Ahmad Syafii, M.Pd',
+                        nip: '197003011995021001',
+                        unitKerja: 'Fakultas Ilmu Pendidikan',
+                        jabatan: 'Dosen',
+                        email: 'ahmad.syafii@unp.ac.id',
+                        telepon: '081234567890',
+                        jenisHewan: 'sapi',
+                        totalBiaya: 3500000,
+                        potonganPerBulan: 291667,
+                        status: 'Aktif',
+                        catatan: 'Sudah konfirmasi via WA',
+                        tanggalDaftar: '2025-05-10T08:30:00Z'
+                    },
+                    {
+                        id: '2',
+                        nama: 'Dewi Sartika, S.Pd, M.Si',
+                        nip: '198504152006042001',
+                        unitKerja: 'Fakultas Bahasa dan Seni',
+                        jabatan: 'Dosen',
+                        email: 'dewi.sartika@unp.ac.id',
+                        telepon: '082345678901',
+                        jenisHewan: 'domba',
+                        totalBiaya: 2800000,
+                        potonganPerBulan: 233334,
+                        status: 'Menunggu Verifikasi',
+                        catatan: '',
+                        tanggalDaftar: '2025-05-15T14:20:00Z'
+                    },
+                    {
+                        id: '3',
+                        nama: 'Budi Santoso, S.Kom',
+                        nip: '199010102015021001',
+                        unitKerja: 'Administrasi',
+                        jabatan: 'Staf TU',
+                        email: 'budi.santoso@unp.ac.id',
+                        telepon: '083456789012',
+                        jenisHewan: 'kambing',
+                        totalBiaya: 2500000,
+                        potonganPerBulan: 208334,
+                        status: 'Selesai',
+                        catatan: 'Sudah menerima sertifikat qurban',
+                        tanggalDaftar: '2025-05-20T10:15:00Z'
+                    }
+                ];
+                saveParticipants();
+                generateReport();
+                generateManagementTable();
+            }
+        });
+    </script>
+</body>
+</html>

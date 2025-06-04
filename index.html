@@ -372,7 +372,12 @@
                 margin: 10% auto;
             }
         }
-        /* Style untuk scrollbar di modal */
+        .modal-content {
+    max-height: 80vh; /* Batasi tinggi maksimal modal */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi tinggi */
+}
+
+    /* Style untuk scrollbar di modal */
     .modal-content::-webkit-scrollbar {
         width: 8px;
     }
